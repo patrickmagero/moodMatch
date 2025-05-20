@@ -12,7 +12,7 @@ let userPreferredGenres = [];
 
 // Fetch genre map from TMDb and store ID-name pairs
 async function fetchGenreMap() {
-  const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${TMDB_API_KEY}&language=en-US`;
+  const url = `${BACKEND_BASE_URL}/genres`;
 
   try {
     const response = await fetch(url);
@@ -29,6 +29,7 @@ async function fetchGenreMap() {
     console.error("Genre map fetch failed:", error);
   }
 }
+
 
 // Convert genre names to IDs using the dynamic map
 function genreNamesToIds(names) {
