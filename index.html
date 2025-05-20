@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script type="module" src="script.js"></script>
+  <title>MoodMatch</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <div class="container">
+
+    <!-- 1️⃣ Menu Section -->
+    <header>
+  <nav>
+    <a href="#" id="toggle-preferences">Preferences</a>
+  </nav>
+</header>
+
+<!-- Preference form dropdown -->
+<div id="preferences-panel">
+  <form id="preferences-form">
+    <h4>Select Your Favorite Genres:</h4>
+    <label><input type="checkbox" name="genre" value="28"> Action</label>
+    <label><input type="checkbox" name="genre" value="35"> Comedy</label>
+    <label><input type="checkbox" name="genre" value="10749"> Romance</label>
+    <label><input type="checkbox" name="genre" value="18"> Drama</label>
+    <label><input type="checkbox" name="genre" value="878"> Sci-Fi</label>
+    <label><input type="checkbox" name="genre" value="53"> Thriller</label>
+    <button type="submit">Save Preferences</button>
+  </form>
+</div>
+
+
+    <!-- 2️⃣ Weather Input Section -->
+    <section id="weather-input">
+      <h2>🌤️ Check the Weather</h2>
+      <input type="text" placeholder="Enter city" id="city-input" />
+      <button onclick="fetchWeather()">Get Weather</button>
+      <button id="geo-button">📍 Use My Location</button>
+
+    </section>
+
+    <!-- 3️⃣ Weather Display Section -->
+    <section id="weather-display">
+      <h2>📋 Current Weather & Mood</h2>
+      <p id="weather-result">No data yet.</p>
+    </section>
+
+   
+
+
+    <!-- 5️⃣ Movie Display Section -->
+    <section id="movie-display">
+      <h2>🎬 Movie Suggestions</h2>
+      <div id="movie-result"></div>
+    </section>
+
+  </div>
+</body>
+</html>

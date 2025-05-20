@@ -1,0 +1,166 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 2em;
+    color: #333;
+  }
+
+  h1, h2, h4 {
+    text-align: center;
+    color: #444;
+  }
+
+  #weather-result, #movie-result {
+    max-width: 700px;
+    margin: 2em auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    padding: 1.5em;
+  }
+
+  .movie-card {
+    border-bottom: 1px solid #eee;
+    padding: 1em 0;
+  }
+
+  .movie-card:last-child {
+    border-bottom: none;
+  }
+
+  .movie-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #222;
+  }
+
+  .movie-overview {
+    font-style: italic;
+    color: #666;
+  }
+
+  .genre-badge {
+    display: inline-block;
+    background-color: #e0f0ff;
+    color: #0275d8;
+    font-size: 0.8em;
+    padding: 0.3em 0.6em;
+    margin: 0.3em 0.3em 0 0;
+    border-radius: 20px;
+  }
+
+  #preferences-form {
+    max-width: 700px;
+    margin: 1em auto;
+    background: #fff;
+    padding: 1.5em;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+
+  #preferences-panel {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 1em;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
+
+#preferences-panel.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+header {
+  padding: 1em 2em;
+  background: #0275d8;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+
+
+  button {
+    background-color: #0275d8;
+    color: white;
+    padding: 0.7em 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 1em;
+  }
+
+  button:hover {
+    background-color: #025aa5;
+  }
+
+  #city-input {
+    width: 100%;
+    padding: 0.7em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+  }
+
+  .movie-card {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  margin-bottom: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.02);
+}
+
+.movie-poster {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.movie-info {
+  padding: 1em;
+  flex: 1;
+}
+#geo-button {
+  background-color: #5cb85c;
+  color: white;
+  margin-left: 1em;
+  font-weight: bold;
+}
+
+#geo-button:hover {
+  background-color: #4cae4c;
+}
