@@ -2,9 +2,11 @@
 
 import { mapWeatherToMood } from './moodMapper.js';
 import { mapMoodToGenreNames } from './genreMapper.js';
-import { fetchMoviesByGenres, TMDB_API_KEY } from './movieFetcher.js';
+import { fetchMoviesByGenres } from './movieFetcher.js';
 
-const apiKey = "ce70999fdece0e58b5c78d4044329f1e"; // OpenWeatherMap API key
+const BACKEND_BASE_URL = "https://moodmatch-backend.onrender.com";
+
+
 let genreIdToName = {};
 let userPreferredGenres = [];
 
@@ -56,7 +58,8 @@ function fetchWeather() {
     return;
   }
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+ const url = `${BACKEND_BASE_URL}/weather?city=${city}`;
+
 
   fetch(url)
     .then(response => {
@@ -177,7 +180,8 @@ async function fetchWeatherByCoords(lat, lon) {
   const resultDiv = document.getElementById("weather-result");
   const movieDiv = document.getElementById("movie-result");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  const url = `${BACKEND_BASE_URL}/weather/coords?lat=${lat}&lon=${lon}`;
+
 
   try {
     const response = await fetch(url);

@@ -1,19 +1,19 @@
 // movieFetcher.js
-export const TMDB_API_KEY = 'b332a41171225909b9de5b4b6a16881a';
+ const BACKEND_BASE_URL = "https://moodmatch-backend.onrender.com";
 
 export async function fetchMoviesByGenres(genreIds) {
   const genreParam = genreIds.join(',');
-
-  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=${genreParam}&sort_by=popularity.desc`;
+  const url = `${BACKEND_BASE_URL}/movies?genres=${genreParam}`;
 
   try {
     const response = await fetch(url);
-    if (!response.ok) throw new Error("TMDb fetch failed");
+    if (!response.ok) throw new Error("Backend fetch failed");
 
     const data = await response.json();
-    return data.results.slice(0, 15); // Return top 15 movies
+    return data; // Already sliced to top 15
   } catch (error) {
     console.error("Movie Fetch Error:", error);
     return [];
   }
 }
+
